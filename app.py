@@ -25,7 +25,6 @@ with st.container():
     median_income = col2.number_input('Ingreso Promedio /Median income', min_value = 0.0, max_value = 17.0, format = "%.4f")
 
 with st.container():
-    model = 'Random Forest Regression'
 
     if st.button('Hacer prediccion'):
         data = pd.DataFrame({
@@ -40,5 +39,5 @@ with st.container():
             'ocean_proximity': [ocean_proximity]}
         )
 
-        result = prediction.predict(data, model)
+        result = prediction.predict(data)
         st.write("Valor predecido es de {:.1f} dlls".format(result[0]))
